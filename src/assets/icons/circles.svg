@@ -1,0 +1,138 @@
+<svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 116 270"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle r="11" transform="matrix(0 1 1 0 11 209)" fill="#00356F" />
+      <ellipse
+        rx="10.5"
+        ry="11.5"
+        transform="matrix(0 1 1 0 35.5 226.5)"
+        fill="#FFB800"
+      />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 57.5 209)"
+        fill="#00356F"
+      />
+      <circle r="10.5" transform="matrix(0 1 1 0 82.5 226.5)" fill="#FFB800" />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 104.5 209)"
+        fill="#00356F"
+      />
+      <circle r="11" transform="matrix(0 1 1 0 11 143)" fill="#00356F" />
+      <ellipse
+        rx="10.5"
+        ry="11"
+        transform="matrix(0 1 1 0 36 160.5)"
+        fill="#FFB800"
+      />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 57.5 143)"
+        fill="#00356F"
+      />
+      <circle r="10.5" transform="matrix(0 1 1 0 82.5 160.5)" fill="#FFB800" />
+      <circle r="11" transform="matrix(0 1 1 0 105 143)" fill="#00356F" />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 11.5 77)"
+        fill="#00356F"
+      />
+      <circle r="11" transform="matrix(0 1 1 0 36 94)" fill="#FFB800" />
+      <circle r="11" transform="matrix(0 1 1 0 58 77)" fill="#00356F" />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 82.5 95)"
+        fill="#FFB800"
+      />
+      <circle r="11" transform="matrix(0 1 1 0 105 77)" fill="#00356F" />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 11.5 11)"
+        fill="#00356F"
+      />
+      <ellipse
+        rx="10.5"
+        ry="11"
+        transform="matrix(0 1 1 0 36 28.5)"
+        fill="#FFB800"
+      />
+      <circle r="11" transform="matrix(0 1 1 0 58 11)" fill="#00356F" />
+      <circle r="11" transform="matrix(0 1 1 0 83 29)" fill="#FFB800" />
+      <circle r="11" transform="matrix(0 1 1 0 105 11)" fill="#00356F" />
+      <circle r="11" transform="matrix(0 1 1 0 11 242)" fill="#00356F" />
+      <ellipse
+        rx="11"
+        ry="11.5"
+        transform="matrix(0 1 1 0 35.5 259)"
+        fill="#00356F"
+      />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 57.5 242)"
+        fill="#00356F"
+      />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 82.5 259)"
+        fill="#00356F"
+      />
+      <circle r="10.5" transform="matrix(0 1 1 0 104.5 241.5)" fill="#00356F" />
+      <ellipse
+        rx="10.5"
+        ry="11"
+        transform="matrix(0 1 1 0 11 176.5)"
+        fill="#00356F"
+      />
+      <circle r="11" transform="matrix(0 1 1 0 36 193)" fill="#00356F" />
+      <circle r="10.5" transform="matrix(0 1 1 0 57.5 175.5)" fill="#00356F" />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 82.5 193)"
+        fill="#00356F"
+      />
+      <circle r="10.5" transform="matrix(0 1 1 0 104.5 175.5)" fill="#00356F" />
+      <ellipse
+        rx="10.5"
+        ry="11"
+        transform="matrix(0 1 1 0 11 110.5)"
+        fill="#00356F"
+      />
+      <circle r="11" transform="matrix(0 1 1 0 36 127)" fill="#00356F" />
+      <ellipse
+        rx="10.5"
+        ry="11"
+        transform="matrix(0 1 1 0 58 109.5)"
+        fill="#00356F"
+      />
+      <circle r="10.5" transform="matrix(0 1 1 0 82.5 127.5)" fill="#00356F" />
+      <circle r="11" transform="matrix(0 1 1 0 105 110)" fill="#00356F" />
+      <ellipse
+        rx="11"
+        ry="10.5"
+        transform="matrix(0 1 1 0 11.5 44)"
+        fill="#00356F"
+      />
+      <circle r="11" transform="matrix(0 1 1 0 36 61)" fill="#00356F" />
+      <circle r="11" transform="matrix(0 1 1 0 58 44)" fill="#00356F" />
+      <circle r="11" transform="matrix(0 1 1 0 83 62)" fill="#00356F" />
+      <ellipse
+        rx="10.5"
+        ry="11"
+        transform="matrix(0 1 1 0 105 44.5)"
+        fill="#00356F"
+      />
+    </svg>

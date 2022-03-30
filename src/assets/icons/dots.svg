@@ -1,0 +1,29 @@
+<svg
+      width="20"
+      height="5"
+      viewBox="0 0 20 5"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="3.22862"
+        cy="2.4225"
+        r="2.24345"
+        transform="rotate(-90 3.22862 2.4225)"
+        fill="#929292"
+      />
+      <circle
+        cx="10.4077"
+        cy="2.4225"
+        r="2.24345"
+        transform="rotate(-90 10.4077 2.4225)"
+        fill="#929292"
+      />
+      <circle
+        cx="17.5868"
+        cy="2.4225"
+        r="2.24345"
+        transform="rotate(-90 17.5868 2.4225)"
+        fill="#929292"
+      />
+    </svg>
