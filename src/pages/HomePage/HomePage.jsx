@@ -18,6 +18,7 @@ const HomePage = () => {
   const [chosen, setChosen] = useState(0);
   const [select, setSelect] = useState("Ташкилот номи");
   const [searchValue, setSearchValue] = useState("");
+  const [userMenu, setUserMenu] = useState(0);
 
   const handleDrop = () => setDrop(!drop);
 
@@ -149,6 +150,8 @@ const HomePage = () => {
               editUser={() => editUser(el)}
               count={index + 1}
               userName={el.login_name}
+              userMenu={userMenu === el.id && true}
+              onClick={() => setUserMenu(el.id)}
               orgName={
                 el.organization?.name_cyr
                   ? el.organization?.name_cyr
