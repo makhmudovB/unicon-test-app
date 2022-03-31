@@ -130,8 +130,21 @@ code {
   justify-content: center;
   z-index: 10;
 }
+@keyframes modal {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 50%;
+  }
+}
 
 .modal {
+  animation: modal 0.3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 45px;
   background-color: #ffffff;
   box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.25);

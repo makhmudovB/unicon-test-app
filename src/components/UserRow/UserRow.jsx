@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import dots from "../../assets/icons/dots.svg";
 import editIcon from "../../assets/icons/editIcon.svg";
 import icon from "../../assets/icons/icon.svg";
 import { Styles } from "./UserRow.styled";
 
 const UserRow = ({ editUser, count, userName, orgName }) => {
+  const [userMenu, setUserMenu] = useState(false);
+  const openUserMenu = () => setUserMenu(true);
   return (
     <Styles.Root>
       <div className="user-row_wrap">
@@ -17,14 +19,16 @@ const UserRow = ({ editUser, count, userName, orgName }) => {
           <div className="org-name_wrap">
             <span>{orgName}</span>
           </div>
-          <div className="dots-wrap" style={{ display: "flex" }}>
+          <div className="dots-wrap" onClick={openUserMenu}>
             <img src={dots} alt="dots" />
-            <div className="edit">
-              <button onClick={editUser}>
-                <img src={editIcon} alt="editIcon" />
-                <span>Ўзгартириш</span>
-              </button>
-            </div>
+            {userMenu && (
+              <div className="edit">
+                <button onClick={editUser}>
+                  <img src={editIcon} alt="editIcon" />
+                  <span>Ўзгартириш</span>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
