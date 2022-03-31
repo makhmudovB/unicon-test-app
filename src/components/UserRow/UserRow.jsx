@@ -3,8 +3,17 @@ import dots from "../../assets/icons/dots.svg";
 import editIcon from "../../assets/icons/editIcon.svg";
 import icon from "../../assets/icons/icon.svg";
 import { Styles } from "./UserRow.styled";
+import OutsideClickHandler from "react-outside-click-handler";
 
-const UserRow = ({ editUser, count, userName, orgName, onClick, userMenu }) => {
+const UserRow = ({
+  editUser,
+  count,
+  userName,
+  orgName,
+  onClick,
+  userMenu,
+  clickOutside,
+}) => {
   return (
     <Styles.Root>
       <div className="user-row_wrap">
@@ -17,15 +26,19 @@ const UserRow = ({ editUser, count, userName, orgName, onClick, userMenu }) => {
           <div className="org-name_wrap">
             <span>{orgName}</span>
           </div>
-          <div className="dots-wrap" onClick={onClick}>
-            <img src={dots} alt="dots" />
+          <div className="dots-wrap">
+            <div style={{ width: 30, height: 30 }} onClick={onClick}>
+              <img src={dots} alt="dots" />
+            </div>
             {userMenu && (
-              <div className="edit">
-                <button onClick={editUser}>
-                  <img src={editIcon} alt="editIcon" />
-                  <span>Ўзгартириш</span>
-                </button>
-              </div>
+              <OutsideClickHandler onOutsideClick={clickOutside}>
+                <Styles.Edit>
+                  <button onClick={editUser}>
+                    <img src={editIcon} alt="editIcon" />
+                    <span>Ўзгартириш</span>
+                  </button>
+                </Styles.Edit>
+              </OutsideClickHandler>
             )}
           </div>
         </div>

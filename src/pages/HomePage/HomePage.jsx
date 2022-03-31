@@ -10,6 +10,7 @@ import Loading from "../../components/Loading/Loading";
 import { getUsers } from "../../redux/actions/userAction";
 import { Styles } from "./HomePage.styled";
 import { refreshToken } from "../../redux/actions/authAction";
+import ReactModal from "react-modal";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,13 @@ const HomePage = () => {
   const [select, setSelect] = useState("Ташкилот номи");
   const [searchValue, setSearchValue] = useState("");
   const [userMenu, setUserMenu] = useState(0);
+  const [menu, setMenu] = useState(false);
 
   const handleDrop = () => setDrop(!drop);
 
   const closeModal = () => {
     setModal(null);
+    setMenu(false);
   };
 
   const handleSelect = (arg) => {
@@ -34,11 +37,14 @@ const HomePage = () => {
   const createUser = useCallback(() => {
     setModal("CREATE");
     setChosen(0);
+    setMenu(false);
   }, []);
 
   const editUser = useCallback(({ id }) => {
     setModal("UPDATE");
     setChosen(id);
+    setMenu(false);
+    setUserMenu(0);
   }, []);
 
   const { user, loading } = useSelector((state) => state.user);
@@ -60,6 +66,11 @@ const HomePage = () => {
     dispatch(getUsers(params, access?.data?.access));
   };
 
+  const handleUserMenu = (id) => {
+    setMenu(true);
+    setUserMenu(id);
+  };
+
   useEffect(() => {
     dispatch(getUsers(params, access?.data?.access));
   }, [access]);
@@ -73,16 +84,24 @@ const HomePage = () => {
 
   return (
     <>
-      {modal === "CREATE" && (
-        <UsersModal open={createUser} close={closeModal} />
-      )}
-      {modal === "UPDATE" && (
-        <UsersModal
-          updateData={chosenData}
-          open={createUser}
-          close={closeModal}
-        />
-      )}
+      <ReactModal
+        isOpen={modal}
+        onRequestClose={closeModal}
+        className="modal"
+        overlayClassName="overlay"
+      >
+        {modal === "CREATE" && (
+          <UsersModal close={closeModal} onFocus={() => setMenu(false)} />
+        )}
+        {modal === "UPDATE" && (
+          <UsersModal
+            updateData={chosenData}
+            close={closeModal}
+            onFocus={() => setMenu(false)}
+          />
+        )}
+      </ReactModal>
+
       <Header
         title="Фойдаланувчилар"
         userName="FullName"
@@ -150,8 +169,9 @@ const HomePage = () => {
               editUser={() => editUser(el)}
               count={index + 1}
               userName={el.login_name}
-              userMenu={userMenu === el.id && true}
-              onClick={() => setUserMenu(el.id)}
+              userMenu={userMenu === el.id && menu}
+              onClick={() => handleUserMenu(el.id)}
+              clickOutside={() => setMenu(false)}
               orgName={
                 el.organization?.name_cyr
                   ? el.organization?.name_cyr
