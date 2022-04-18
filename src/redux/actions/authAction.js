@@ -1,33 +1,10 @@
 import { paths } from "../../common/paths";
 import ApiService from "../../services/api";
 import * as authTypes from "../actionTypes/authActionTypes";
-
-const authStarting = () => ({
-  type: authTypes.AUTH_START,
-});
-
-const authSuccess = (data) => ({
-  type: authTypes.AUTH_SUCCESS,
-  payload: data,
-});
-
-const authError = (error) => ({
-  type: authTypes.AUTH_FAIL,
-  payload: error,
-});
-
-const setRefresh = (token) => ({
-  type: authTypes.SET_REFRESH,
-  payload: token,
-});
-
-const setLogout = (token) => ({
-  type: authTypes.LOG_OUT,
-  payload: token,
-});
+import { handleType } from "./handleType";
 
 export const getAuth = (payload) => (dispatch) => {
-  dispatch(authStarting());
+  dispatch(handleType(authTypes.AUTH_START));
   const { login_name, password } = payload;
   const body = {
     login_name,
@@ -35,26 +12,26 @@ export const getAuth = (payload) => (dispatch) => {
   };
   return ApiService.postEvent("/v1/token/", body, null)
     .then((value) => {
-      dispatch(authSuccess(value.data));
+      dispatch(handleType(authTypes.AUTH_SUCCESS, value.data));
       if (value.data.role === "admin") {
         window.location.replace(paths.home);
       } else {
         window.location.replace(paths.error);
       }
     })
-    .catch((error) => dispatch(authError(error)));
+    .catch((error) => dispatch(handleType(authTypes.AUTH_FAIL, error)));
 };
 
 export const refreshToken = (token) => (dispatch) => {
   return ApiService.postEvent("/v1/token/refresh/", token, null).then(
     (value) => {
-      dispatch(setRefresh(value));
+      dispatch(handleType(authTypes.SET_REFRESH, value));
     }
   );
 };
 
 export const logOut = (token) => (dispatch) => {
   return ApiService.postEvent("/v1/logout/", token, null).then((value) => {
-    dispatch(setLogout(value));
+    dispatch(handleType(authTypes.LOG_OUT, value));
   });
 };
